@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 
-CONFIG = Path("config.json")
+CONFIG_FILE = Path("config.json")
 DEFAULT_CONFIG = {
     "source_folder":None,
     "destination_folder":None,
@@ -17,15 +17,15 @@ DEFAULT_CONFIG = {
 }
 
 def load_config() -> dict:
-    if not CONFIG.exists():
+    if not CONFIG_FILE.exists():
         save_config(DEFAULT_CONFIG)
-        return DEFAULT_CONFIG
+        return validate_config(DEFAULT_CONFIG)
 
-    with open(CONFIG, "r") as f:
+    with open(CONFIG_FILE, "r") as f:
         return validate_config(json.load(f))
 
 def save_config(config):
-    with open(CONFIG, "w") as f:
+    with open(CONFIG_FILE, "w") as f:
         json.dump(config, f, indent=4)
 
 def validate_config(config) -> dict:

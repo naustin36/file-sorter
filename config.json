@@ -1,13 +1,30 @@
 {
-  "source_folder": "~/Media/dump/",
-  "destination_folder": "~/Media/family",
-  "media_types":{
-    "photo": [".jpg", ".jpeg", ".png", ".webp"],
-    "video": [".mp4", ".webm"],
-    "gif": [".gif"]
-  },
-  "document_types":{
-    "text_document": [".doc", ".docx", ".txt", ".odt"],
-    "PDF_document": [".pdf"]
-  }
+    "source_folder": "~/Media/dump",
+    "destination_folder": "~/Media/family",
+    "media_types": {
+        "photo": [
+            ".jpg",
+            ".jpeg",
+            ".png",
+            ".webp"
+        ],
+        "video": [
+            ".mp4",
+            ".webm"
+        ],
+        "gif": [
+            ".gif"
+        ]
+    },
+    "document_types": {
+        "text documents": [
+            ".doc",
+            ".txt",
+            ".docx",
+            ".odt"
+        ],
+        "PDF documents": [
+            ".pdf"
+        ]
+    }
 }

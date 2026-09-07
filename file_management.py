@@ -1,11 +1,7 @@
 from pathlib import Path
 from config import *
 
-config = load_config()
-destination = Path(config["destination_folder"]).expanduser()
-file_categories = config["media_types"]
-
-def sort_file(file: Path) -> None:
+def sort_file(file: Path, destination: Path, file_categories: dict) -> None:
     for category in file_categories:
         if file.suffix in file_categories[category]:
             final_destination = destination.joinpath(category)
