@@ -18,7 +18,9 @@ DEFAULT_CONFIG = {
 
 def load_config() -> dict:
     if not CONFIG_FILE.exists():
+        print(f"{CONFIG_FILE} not found, creating default file...")
         save_config(DEFAULT_CONFIG)
+        print(f"{CONFIG_FILE} saved. Please set your source folder by editing {CONFIG_FILE}")
         return validate_config(DEFAULT_CONFIG)
 
     with open(CONFIG_FILE, "r") as f:
