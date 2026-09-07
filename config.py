@@ -16,7 +16,7 @@ def load_config() -> dict:
         return DEFAULT_CONFIG
 
     with open(CONFIG, "r") as f:
-        return json.load(f)
+        return validate_config(json.load(f))
 
 def save_config(config):
     with open(CONFIG, "w") as f:
