@@ -1,7 +1,13 @@
 {
   "source_folder": "~/Media/dump/",
   "destination_folder": "~/Media/family",
-  "photo": [".jpg", ".jpeg", ".png", ".webp"],
-  "video": [".mp4", ".webm"],
-  "gif": [".gif"]
+  "media_types":{
+    "photo": [".jpg", ".jpeg", ".png", ".webp"],
+    "video": [".mp4", ".webm"],
+    "gif": [".gif"]
+  },
+  "document_types":{
+    "text_document": [".doc", ".docx", ".txt", ".odt"],
+    "PDF_document": [".pdf"]
+  }
 }
