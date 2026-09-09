@@ -12,6 +12,14 @@ def move_file(file: Path, destination_path: Path) -> None:
     if not destination_path.exists():
         destination_path.mkdir()
     final_destination = destination_path.joinpath(file.name)
+    if final_destination.exists():
+        if input(f"{file} already exists. Overwrite? Y/N >> ").lower() == "y":
+            print(f"Replacing existing file at {destination_path}...")
+            file.rename(final_destination)
+            return
+        else:
+            print("Skipping file...")
+            return
     file.rename(final_destination)
 
 def load_source_folder(source_path: Path) -> list[Path]:
@@ -19,5 +27,4 @@ def load_source_folder(source_path: Path) -> list[Path]:
     for file in source_path.iterdir():
         if file.is_file:
             source_files.append(file)
-    print(f"{len(source_files)} files found in '{source_path}'")
     return source_files

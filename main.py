@@ -16,12 +16,14 @@ def main():
     destination = Path(config["destination_folder"]).expanduser()
     file_categories = config["media_types"]
 
-    try:
-        for file in source_files:
+    for file in source_files:
+        try:
             sort_file(file, destination, file_categories)
-    except Exception as e:
-        print(e)
-        return
+        except Exception as e:
+            print(e)
 
 if __name__ == "__main__":
     main()
+
+def filter_file_list(source_files: list[Path]):
+    pass
