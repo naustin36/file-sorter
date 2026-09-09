@@ -2,15 +2,22 @@ from pathlib import Path
 from config import *
 
 def sort_file(file: Path, destination: Path, file_categories: dict) -> None:
+    # Check which folder the file should be moved into
     for category in file_categories:
         if file.suffix in file_categories[category]:
+            # Add category folder to destination path
             final_destination = destination.joinpath(category)
             move_file(file, final_destination)
 
 def move_file(file: Path, destination_path: Path) -> None:
+    # Creates destination directory if it doesn't already exist
     if not destination_path.exists():
         destination_path.mkdir()
+
+    # Add selected file name to the destination path
     final_destination = destination_path.joinpath(file.name)
+
+    # Check whether file exists
     if final_destination.exists():
         if input(f"{file} already exists. Overwrite? Y/N >> ").lower() == "y":
             print(f"Replacing existing file at {destination_path}...")
@@ -19,6 +26,8 @@ def move_file(file: Path, destination_path: Path) -> None:
         else:
             print("Skipping file...")
             return
+
+    # Move file to the destination folder
     print(f"Moving {file.name} to '{destination_path}'")
     file.rename(final_destination)
 

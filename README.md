@@ -13,7 +13,7 @@ If you do not set the destination folder, it will use the source folder as the d
 
 To change the name of the folder a file type is saved to, add file types to sort, or add a new media type, edit config.json as shown:
 
-"media_types": {
+"media": {
         "(new folder name here)": [
             ".jpg",
             ".jpeg",

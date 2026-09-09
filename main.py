@@ -30,4 +30,5 @@ if __name__ == "__main__":
     main()
 
 def filter_file_list(source_files: list[Path]):
+    # future feature related to selecting file categories
     pass

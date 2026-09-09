@@ -9,10 +9,6 @@ DEFAULT_CONFIG = {
         "photo": [".jpg", ".jpeg", ".png", ".webp"],
         "video": [".mp4", ".webm"],
         "gif": [".gif"]
-    },
-    "document_types":{
-        "text documents": [".doc", ".txt", ".docx", ".odt"],
-        "PDF documents": [".pdf"]
     }
 }
 
