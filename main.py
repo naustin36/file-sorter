@@ -14,11 +14,15 @@ def main():
     source_folder = Path(config["source_folder"]).expanduser()
     source_files = load_source_folder(source_folder)
     destination = Path(config["destination_folder"]).expanduser()
-    file_categories = config["media_types"]
+
+    # Temporary until feature for selecting file types is completed
+    file_categories = config["media"]
 
     for file in source_files:
         try:
-            sort_file(file, destination, file_categories)
+            # Only move files, not directories
+            if file.is_file():
+                sort_file(file, destination, file_categories)
         except Exception as e:
             print(e)
 

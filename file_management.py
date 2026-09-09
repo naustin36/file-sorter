@@ -8,7 +8,6 @@ def sort_file(file: Path, destination: Path, file_categories: dict) -> None:
             move_file(file, final_destination)
 
 def move_file(file: Path, destination_path: Path) -> None:
-    print(f"Moving {file.name} to '{destination_path}'")
     if not destination_path.exists():
         destination_path.mkdir()
     final_destination = destination_path.joinpath(file.name)
@@ -20,6 +19,7 @@ def move_file(file: Path, destination_path: Path) -> None:
         else:
             print("Skipping file...")
             return
+    print(f"Moving {file.name} to '{destination_path}'")
     file.rename(final_destination)
 
 def load_source_folder(source_path: Path) -> list[Path]:
